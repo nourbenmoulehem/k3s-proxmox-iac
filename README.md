@@ -31,8 +31,15 @@ terraform plan
 terraform apply
 
 cd ../ansible
-ansible-playbook -i inventory.ini k3s-worker.yml
+ansible-playbook -i inventory.yaml playbook-k3s-worker.yaml --ask-vault-pass
 ```
+
+you can override diffult values in terraform apply -var="template_id=9001"
+
+playbook output:
+![playbook output](docs/playbook.png)
+final output:
+![new node joined](docs/getNodes.png)
 
 ## Note on the qemu-guest-agent
 
