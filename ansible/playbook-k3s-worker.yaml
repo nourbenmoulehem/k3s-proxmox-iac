@@ -1,0 +1,13 @@
+---
+
+- name: join vm as worker to k3s
+  hosts: workers
+  become: yes
+  vars_files:
+    - secrets.yaml
+  tasks:
+    - name: install k3s agent and join cluster
+      shell: |
+       curl -sfL https://get.k3s.io | K3S_URL=https://192.168.1.171:6443 K3S_TOKEN={{join_token}} sh -
+      args:
+        creates: /etc/systemd/system/k3s-agent.service
