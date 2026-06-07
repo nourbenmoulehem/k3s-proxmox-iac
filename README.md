@@ -53,3 +53,6 @@ has it.
 - Multiple workers + a count/variable for scaling
 - Taint the control-plane so workloads land on workers
 - Build the template itself with Packer instead of by hand
+
+
+
