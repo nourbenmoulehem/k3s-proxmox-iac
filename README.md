@@ -34,7 +34,7 @@ cd ../ansible
 ansible-playbook -i inventory.yaml playbook-k3s-worker.yaml --ask-vault-pass
 ```
 
-you can override diffult values in terraform apply -var="template_id=9001"
+you can override default values in terraform apply -var="template_id=9001"
 
 playbook output:
 ![playbook output](docs/playbook.png)
